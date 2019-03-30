@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeLine1", "CodeLine1\CodeLine1.csproj", "{3FE9F3FF-9706-4533-9FA3-D1D7C742895D}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "CodeLine_Setup", "CodeLine_Setup\CodeLine_Setup.vdproj", "{13FCAEA5-92EA-4A4E-8192-6F1A174689C3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3FE9F3FF-9706-4533-9FA3-D1D7C742895D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FE9F3FF-9706-4533-9FA3-D1D7C742895D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FE9F3FF-9706-4533-9FA3-D1D7C742895D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FE9F3FF-9706-4533-9FA3-D1D7C742895D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13FCAEA5-92EA-4A4E-8192-6F1A174689C3}.Debug|Any CPU.ActiveCfg = Debug
+		{13FCAEA5-92EA-4A4E-8192-6F1A174689C3}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A5663C23-CD94-4693-B8E9-787B83733DDA}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,51 @@
+﻿<Window x:Class="CodeLine1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CodeLine1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="550" Width="725">
+    <Window.Resources>
+        <RoutedCommand x:Key="OpenFolder"/>
+        <RoutedCommand x:Key="OpenFile"/>
+    </Window.Resources>
+    <Window.CommandBindings>
+        <CommandBinding Command="{StaticResource OpenFolder}" Executed="OpenFolder_Executed" CanExecute="OpenFolder_CanExecuted" />
+        <CommandBinding Command="{StaticResource OpenFile}" Executed="OpenFile_Executed" CanExecute="OpenFile_CanExecuted" />
+    </Window.CommandBindings>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="20"></RowDefinition>
+            <RowDefinition Height="20"></RowDefinition>
+            <RowDefinition Height="20"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <TextBox IsReadOnly="True" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Text="{Binding Path,UpdateSourceTrigger=PropertyChanged}" />
+        <Button Grid.Row="0" Grid.Column="4" Content="选择文件" Command="{StaticResource OpenFile}"/>
+        <Button Grid.Row="0" Grid.Column="5" Content="选择文件夹" Command="{StaticResource OpenFolder}"/>
+        <ListBox ScrollViewer.VerticalScrollBarVisibility="Visible" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="6" x:Name="listbox1" ItemsSource="{Binding FileName,Mode=TwoWay}"/>
+        <TextBlock  Grid.Row="3" Grid.Column="0" Text="总行数"/>
+        <TextBox  IsReadOnly="True" Grid.Row="3" Grid.Column="1" Text="{Binding AllNum,UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBlock  Grid.Row="3" Grid.Column="2" Text="空白行数"/>
+        <TextBox  IsReadOnly="True" Grid.Row="3" Grid.Column="3" Text="{Binding WhiteNum,UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBlock  Grid.Row="3" Grid.Column="4" Text="有效行数"/>
+        <TextBox  IsReadOnly="True" Grid.Row="3" Grid.Column="5" Text="{Binding EffectNum,UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBlock  Grid.Row="4" Grid.Column="0" Text="注释行数"/>
+        <TextBox  IsReadOnly="True" Grid.Row="4" Grid.Column="1" Text="{Binding CommentNum,UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBlock  Grid.Row="4" Grid.Column="2" Text="注释率"/>
+        <TextBox  IsReadOnly="True" Grid.Row="4" Grid.Column="3" Text="{Binding CommentRate,UpdateSourceTrigger=PropertyChanged}"/>
+        <ProgressBar Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" Name="pbBar" />
+        <TextBlock  Grid.Row="2" Grid.Column="4" Text="文件总数"/>
+        <TextBox  IsReadOnly="True" Grid.Row="2" Grid.Column="5" Text="{Binding FileNum,UpdateSourceTrigger=PropertyChanged}"/>
+    </Grid>
+</Window>
